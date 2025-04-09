@@ -12,30 +12,30 @@ const steps = [
     id: 'Personal',
     title: 'Get Your Free Quote',
     fields: [
-      { name: 'firstName', label: 'First Name', type: 'text', placeholder: 'John' },
-      { name: 'lastName', label: 'Last Name', type: 'text', placeholder: 'Doe' },
-      { name: 'email', label: 'Email Address', type: 'email', placeholder: 'john.doe@example.com' },
-      { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '(555) 123-4567' },
+      { name: 'firstName' as keyof QuoteFormData, label: 'First Name', type: 'text' as const, placeholder: 'John' },
+      { name: 'lastName' as keyof QuoteFormData, label: 'Last Name', type: 'text' as const, placeholder: 'Doe' },
+      { name: 'email' as keyof QuoteFormData, label: 'Email Address', type: 'email' as const, placeholder: 'john.doe@example.com' },
+      { name: 'phone' as keyof QuoteFormData, label: 'Phone Number', type: 'tel' as const, placeholder: '(555) 123-4567' },
     ],
   },
   {
     id: 'Health',
     title: 'Health Information',
     fields: [
-      { name: 'age', label: 'Age', type: 'number', placeholder: '35' },
+      { name: 'age' as keyof QuoteFormData, label: 'Age', type: 'number' as const, placeholder: '35' },
       {
-        name: 'gender',
+        name: 'gender' as keyof QuoteFormData,
         label: 'Gender',
-        type: 'radio',
+        type: 'radio' as const,
         options: [
           { value: 'male', label: 'Male' },
           { value: 'female', label: 'Female' },
         ],
       },
       {
-        name: 'smoker',
+        name: 'smoker' as keyof QuoteFormData,
         label: 'Do you use tobacco products?',
-        type: 'radio',
+        type: 'radio' as const,
         options: [
           { value: 'yes', label: 'Yes' },
           { value: 'no', label: 'No' },
@@ -48,12 +48,12 @@ const steps = [
     title: 'Coverage Details',
     fields: [
       {
-        name: 'coverageAmount',
+        name: 'coverageAmount' as keyof QuoteFormData,
         label: 'Coverage Amount',
-        type: 'select',
+        type: 'select' as const,
         options: coverageOptions,
       },
-      { name: 'zipCode', label: 'ZIP Code', type: 'text', placeholder: '12345' },
+      { name: 'zipCode' as keyof QuoteFormData, label: 'ZIP Code', type: 'text' as const, placeholder: '12345' },
     ],
   },
   {
@@ -61,9 +61,9 @@ const steps = [
     title: 'Insurance Knowledge',
     fields: [
       {
-        name: 'insuranceType',
+        name: 'insuranceType' as keyof QuoteFormData,
         label: 'What type of life insurance are you looking for?',
-        type: 'radio',
+        type: 'radio' as const,
         options: [
           { value: 'term', label: 'Term Life Insurance' },
           { value: 'whole', label: 'Whole Life Insurance' },
